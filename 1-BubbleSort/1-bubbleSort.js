@@ -1,40 +1,25 @@
-const log = data => console.log(data);    
-    
-    const bubbleSort = unsortedArray => {
+const log = (data) => console.log(data);
 
-        for (let i = 0; i < unsortedArray.length; i++){
+const bubbleSort = (unsortedArray) => {
+  for (let i = 0; i < unsortedArray.length; i++) {
+    for (let j = 0; j <= i; j++) {
+      if (unsortedArray[i] < unsortedArray[j]) {
+        //i = 0, j = (i + 1) = (0 + 1) = 1
 
-            for(let j = 0; j <= i; j++){
-
-               if(unsortedArray[i] < unsortedArray[j]){ //i = 0, j = (i + 1) = (0 + 1) = 1
-
-
-               swap(unsortedArray, i, j); }
-
-
-            }
-
-
-
-
-        }
-
-        const sortedArray = unsortedArray;
-
-
-        return sortedArray;
+        swap(unsortedArray, i, j);
+      }
     }
+  }
 
+  const sortedArray = unsortedArray;
 
-    const swap = (array, index1, index2) => {
+  return sortedArray;
+};
 
-        const temp = array[index1];
-        array[index1] = array[index2];
-        array[index2] = temp;
+const swap = (array, index1, index2) => {
+  const temp = array[index1];
+  array[index1] = array[index2];
+  array[index2] = temp;
+};
 
-        
-
-    }
-
-
-    log(bubbleSort([7,2, 1, 10, 2, 4, 6, 3, 5]));
+log(bubbleSort([7, 2, 1, 10, 2, 4, 6, 3, 5]));
