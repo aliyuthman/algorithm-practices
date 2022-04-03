@@ -17,9 +17,12 @@ const bubbleSort = (unsortedArray) => {
 };
 
 const swap = (array, index1, index2) => {
-  const temp = array[index1];
-  array[index1] = array[index2];
-  array[index2] = temp;
+
+    [array[index1], array[index2]] = [array[index2], array[index1]]
+
+//   const temp = array[index1];
+//   array[index1] = array[index2];
+//   array[index2] = temp;
 };
 
-log(bubbleSort([7, 2, 1, 10, 2, 4, 6, 3, 5]));
+log(bubbleSort([7, 2, 1, 10, 9, 4, 6, 3, 5]));
