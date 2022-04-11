@@ -1,5 +1,12 @@
 const log = (data) => console.log(data);
 
+/*
+
+selection sort allowed selection  and swapping position of any two numbers
+
+-- This is achieve by assuming the first element as selected by the outer loop to to be the minimun otherwise inner loop selection assumed the minimun.
+*/
+
 const swap = (array, index1, index2) => {
   [array[index1], array[index2]] = [array[index2], array[index1]];
 
@@ -9,6 +16,9 @@ const swap = (array, index1, index2) => {
 };
 
 function selectionSort(items) {
+
+  log(items);
+
   let min;
 
   for (let i = 0; i < items.length; i++) {
@@ -22,7 +32,11 @@ function selectionSort(items) {
       }
     }
 
+    log(`Before swapping:  ${items}`);
     swap(items, i, min);
+    log(`Swapped: ${items}`);
+
+
   }
 
   return items;
@@ -31,4 +45,6 @@ function selectionSort(items) {
 
 const arrayNums = [7, 2, 1, 10, 9, 4, 6, 3, 5, 8];
 
-log(selectionSort(arrayNums));
+const sortedArray = selectionSort(arrayNums);
+
+log(sortedArray);
